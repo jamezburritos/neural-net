@@ -30,3 +30,34 @@ void print_vec(Vector *vec)
 
     printf("]\n");
 }
+
+void add_vec(Vector *a, Vector *b)
+{
+    for (int i = 0; i < a->size; i++)
+        a->vector[i] += b->vector[i];
+}
+
+void copy_vec(Vector *src, Vector *dst)
+{
+    for (int i = 0; i < dst->size; i++)
+        dst->vector[i] = src->vector[i];
+}
+
+void map_vec(Vector *vec, double (*fn)(double))
+{
+    for (int i = 0; i < vec->size; i++)
+        vec->vector[i] = fn(vec->vector[i]);
+}
+
+void dot(Vector *a, Matrix *b)
+{
+    for (int i = 0; i < b->rows; i++)
+    {
+        double product = 0;
+        for (int j = 0; j < a->size; j++)
+            product += a->vector[i] * b->matrix[i][j];
+
+        a->vector[i] = product;
+    }
+}
+

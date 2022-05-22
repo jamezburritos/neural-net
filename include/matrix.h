@@ -1,8 +1,6 @@
-#pragma once
+// matrix.h
 
-//
-// Matrix 
-//
+#pragma once
 
 typedef struct {
     int rows;
