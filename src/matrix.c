@@ -15,14 +15,14 @@ Matrix new_mat(int rows, int cols)
     return mat;
 }
 
-Matrix new_random_mat(int rows, int cols, int range)
+Matrix new_random_mat(int rows, int cols)
 {
     Matrix mat = new_mat(rows, cols);
     
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < cols; j++)
             mat.matrix[i][j] = (double)
-                ((rand() / (RAND_MAX * 1.0)) * (range * 2) - range);
+                ((rand() / (RAND_MAX * 1.0)) * 2 - 1);
 
     return mat;
 }

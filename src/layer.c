@@ -4,20 +4,20 @@
 
 #include <math.h>
 
-Layer new_layer(Vector *input, int size, int wRange, int bRange)
+Layer new_layer(Vector *input, int size)
 {
     return (Layer) {
         size, 
         input,
         new_vec(size),
-        new_random_mat(size, input->size, wRange),
-        new_random_vec(size, bRange)
+        new_random_mat(size, input->size),
+        new_random_vec(size)
     };
 }
 
 double sigmoid(double x)
 {
-    return 1.0 / (1.0 + pow(M_E, -x));
+    return 1.0 / (1.0 + exp(-x));
 }
 
 void compute(Layer *ly)

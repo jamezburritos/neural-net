@@ -10,7 +10,7 @@ typedef struct {
 } Vector;
 
 Vector new_vec(int size);
-Vector new_random_vec(int size, int range);
+Vector new_random_vec(int size);
 
 void print_vec(Vector *vec);
 void add_vec(Vector *a, Vector *b);

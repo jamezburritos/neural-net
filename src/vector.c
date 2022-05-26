@@ -10,13 +10,13 @@ Vector new_vec(int size)
     return (Vector) { size, calloc(size, sizeof(double*)) };
 }
 
-Vector new_random_vec(int size, int range)
+Vector new_random_vec(int size)
 {
     Vector vec = new_vec(size);
     
     for (int i = 0; i < size; i++)
         vec.vector[i] = (double)
-            ((rand() / (RAND_MAX * 1.0)) * (range * 2) - range);
+            ((rand() / (RAND_MAX * 1.0)) * 2 - 1);
 
     return vec;
 }

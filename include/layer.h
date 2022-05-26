@@ -10,7 +10,7 @@ typedef struct {
     Vector  biases;
 } Layer;
 
-Layer new_layer(Vector *input, int size, int wRange, int bRange);
+Layer new_layer(Vector *input, int size);
 
 void compute(Layer *ly);
 

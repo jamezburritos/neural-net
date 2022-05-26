@@ -1,0 +1,35 @@
+== NEURAL NETOWRK ==
+
+layer:
+    contains neurons
+
+neuron:
+    contains weights [matrix], and biases [vector]
+    produces a vector
+
+training:
+    forward ->
+    - calculate weighted sum of inputs, using weights
+    - add biases to weighted sums
+    - apply a function like sigmoid to squish values 0-1
+
+    cost <->
+    - calculate the Mean-Squared-Error 
+    
+    backward <-
+    - calculate d(cost)/d(activation)
+      - for every weight, calculate dc/dw
+      - for every bias, calculate dc/db
+    - subtract these values from each weight/bias
+
+testing:
+    forward -> 
+    - calculate the weighted sum
+    - add biases
+    - apply squish function
+
+    end -|
+    - test accuracy of each prediction
+    - calculate a % accuracy for the whole network
+
+
